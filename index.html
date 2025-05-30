@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Playfair+Display:wght@300;400;600&family=Poppins:wght@300;400;500;600&family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Password Screen -->
+    <div id="password-screen" class="password-screen">
+        <div class="password-container">
+            <div class="floating-hearts">
+                <div class="heart">💖</div>
+                <div class="heart">💕</div>
+                <div class="heart">💗</div>
+                <div class="heart">🌸</div>
+                <div class="heart">✨</div>
+            </div>
+            <h1 class="password-title">🎂 Birthday Surprise 🎂</h1>
+            <p class="password-subtitle">Enter the secret code to continue...</p>
+            <div class="password-input-container">
+                <input type="password" id="password-input" placeholder="Enter password" class="password-input">
+                <button id="enter-btn" class="enter-btn">Enter</button>
+            </div>
+            <div id="error-message" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- Main Birthday Content -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Floating Decorations -->
+        <div class="floating-decorations">
+            <div class="decoration flower">🌸</div>
+            <div class="decoration flower">🌺</div>
+            <div class="decoration flower">🌻</div>
+            <div class="decoration flower">🌷</div>
+            <div class="decoration balloon">🎈</div>
+            <div class="decoration balloon">🎈</div>
+            <div class="decoration balloon">🎈</div>
+            <div class="decoration">💕</div>
+            <div class="decoration">✨</div>
+            <div class="decoration">💖</div>
+        </div>
+
+        <!-- Header -->
+        <header class="header" id="main-header">
+            <h1 class="main-title">Happy Birthday!</h1>
+            <p class="subtitle">Wishing you a day filled with happiness and a year filled with joy!</p>
+        </header>
+
+        <!-- Interactive Cards Container -->
+        <div class="cards-container">
+            <!-- Birthday Wishes Card -->
+            <div class="birthday-card" id="birthday-wishes-card">
+                <div class="card-header birthday-wishes-header">
+                    <span class="card-icon">🎂</span>
+                    <span class="card-title">Birthday Wishes</span>
+                </div>
+                <div class="card-content" id="birthday-wishes-content">
+                    <p>On this special day, I want to wish you all the happiness in the world. May your day be as bright and beautiful as you are!</p>
+                    <p>Here's to another amazing year of laughter, joy, and unforgettable memories. You deserve all the best that life has to offer.</p>
+                    <div class="heart-button" onclick="showNextCard('special-message-card')">
+                        💖
+                        <span class="button-text">Click Here</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Message Card -->
+            <div class="birthday-card hidden" id="special-message-card">
+                <div class="card-header special-message-header">
+                    <span class="card-icon">🎁</span>
+                    <span class="card-title">Special Message</span>
+                </div>
+                <div class="card-content" id="special-message-content">
+                    <p>Innikku un birthday… aana enakku mattum dhaan theriyum, indha naal evlo special nu. Naan un mela irukkura feelings-ai oru vaarthaila solla mudiyathu. Pona varusham naan un kitte en manasa solliten... aana ipo kooda un kitte naan best friend-a dhaan iruken.</p>
+                    <p>Aana macha, nee mattum dhaan da enakku romba special. Un smile, un pesuradhu, un kind heart — idhellam en daily happiness. Un presence naala dhaan naan positive-a iruken.</p>
+                    <p>Naan oru hope la thaan iruken. Nee enna epdi paakara nu vida, naan unna eppavum love pannitu thaan iruken. Ipdi oru feel vera yar kitteyum varala.</p>
+                    <p>Indha birthday-la, nee santhoshama irukanum. Naan kaekkura ore wish — nee en vaazhkaila irukanum. Prettyy epdi vena irukattum... aana nee irukkanum <span class="red-heart">❤</span></p>
+                    <div class="heart-button" onclick="showNextCard('celebration-time-card')">
+                        💖
+                        <span class="button-text">Click Here</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Celebration Time Card -->
+            <div class="birthday-card hidden" id="celebration-time-card">
+                <div class="card-header celebration-time-header">
+                    <span class="card-icon">🎵</span>
+                    <span class="card-title">Celebration Time</span>
+                </div>
+                <div class="card-content" id="celebration-time-content">
+                    <p>It's your special day!</p>
+                    <p>Time to celebrate, have fun, and make wonderful memories. Enjoy every moment of your birthday!</p>
+                    <div class="heart-button" onclick="showPhotoSlideshow()">
+                        💖
+                        <span class="button-text">Click Here</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Slideshow Card -->
+            <div class="birthday-card hidden fullscreen-slideshow" id="photo-slideshow-card">
+                <div class="card-header photo-slideshow-header">
+                    <span class="card-icon">📸</span>
+                    <span class="card-title">Beautiful Memories</span>
+                </div>
+                <div class="card-content photo-slideshow-content">
+                    <div class="slideshow-container">
+                        <div class="slide active">
+                            <img src="photo1.jpg" alt="Memory 1" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="photo2.jpg" alt="Memory 2" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="photo3.jpg" alt="Memory 3" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="photo4.jpg" alt="Memory 4" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="photo5.jpg" alt="Memory 5" class="slide-image">
+                        </div>
+                        <div class="slide">
+                            <img src="photo6.jpg" alt="Memory 6" class="slide-image">
+                        </div>
+                    </div>
+                    <div class="slideshow-dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add this to your HTML -->
+<audio id="background-music" loop preload="auto">
+  <source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-hearts">
+                    <span>💖</span>
+                    <span>💕</span>
+                    <span>💗</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="script.js"></script>
+</body>
+</html>
